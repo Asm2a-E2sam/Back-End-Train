@@ -1,0 +1,26 @@
+function binarySearch(arr, num)
+    left = 1
+    right = length(arr)
+    
+    while left <= right
+        mid = (left + right) ÷ 2
+        
+        if arr[mid] == num
+            return mid
+        elseif arr[mid] < num
+            left = mid + 1
+        else
+            right = mid - 1
+        end
+    end
+    
+    return -1
+end
+
+result = binarySearch([10, 20, 30, 40, 50, 60, 70], 30)
+
+if result == -1
+    println("Number is not found in array.")
+else
+    println("Number is found at index : $result.")
+end
